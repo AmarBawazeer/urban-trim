@@ -1,0 +1,57 @@
+## Urban Trim — Premium Men's Salon Website
+
+A luxury, editorial-style single-page site for **Urban Trim** (Hyderabad), inspired by the dark, moody, gold-accented aesthetic of the provided flyers, with the refined typography/spacing rhythm of the Krinitha reference.
+
+### Brand identity (extracted from images)
+- **Palette:** deep charcoal/near-black `#0E0E0E`, warm off-white `#F4EFE6`, signature gold/amber `#C8A45C`, muted copper `#9A6B3F`
+- **Mood:** dark, cinematic, masculine, grooming-craft
+- **Type pairing:** display serif (Playfair Display / Cormorant) for headlines + clean sans (Inter) for body — bold uppercase tracking for labels
+- **Logo wordmark:** "URBAN TRIM — GROOMING EXPERTS"
+
+### Page sections
+
+1. **Top utility bar** — small caps: "PREMIUM MEN'S SALON · HYDERABAD" left, phone `+91 6309480713` right
+2. **Sticky nav** — Wordmark · Services · Offers · Gallery · About · Contact · `Book Now` pill button
+3. **Hero (full-screen, dark)**
+   - Massive serif headline: *"Elevate your look."*
+   - Sub: "Precision haircuts, beards & grooming."
+   - CTAs: `Book Appointment` · `View Services`
+   - Right: portrait image (flyer 1 model) with subtle Ken Burns zoom
+   - Bottom strip: ★ rating · "Open 8 AM – 11 PM" · scroll indicator
+4. **Brand story / About** — two-column: large editorial image left, narrative right ("A modern grooming house in Himayatnagar…"), animated stat counters (Years · Services · Happy Clients)
+5. **Signature services grid** — 6 cards with icons + price (Hair Styling, Face Massage, De-Tan, Head Massage, Hair Color, Beard Shave). Hover: image reveal + gold underline
+6. **Featured offers (carousel)** — three flyer-derived premium packages:
+   - ₹600 — Cut + Wash + Shave + D-Tan + Head Massage (was ₹850)
+   - ₹1100 — + Clean Up + Hair SPA (was ₹1350)
+   - ₹1500 — + Hair Colour + Foot Massage (was ₹2000)
+   - Strikethrough originals, gold price highlight, "Book this package" CTA
+7. **Price list strip** — minimal table: Hair Cut ₹120 · Beard Shave ₹80 · Face Massage ₹100 · Hair Colour ₹300 · Hair SPA ₹300 · Face SPA ₹400
+8. **Visual gallery** — masonry of the four flyer hero images, lightbox on click, parallax scroll
+9. **Inaugural offer banner** — full-width dark band: *"Up to 50% off Hair & Beauty Services"* with gold accent rule
+10. **Testimonials** — 3 quote cards, 5-star, soft fade-in on scroll
+11. **CTA section** — centered: *"Your chair is waiting."* + `Call 6309480713` + `Book Now`
+12. **Footer** — wordmark, address (3-6-195/A, below Rishi Degree College, Himayatnagar-29), hours, social icons, copyright
+
+### Interactions & motion
+- Scroll-reveal fades/translates (Intersection Observer)
+- Hero image Ken Burns + headline letter stagger
+- Service cards: image scale + gold border on hover
+- Sticky nav shrinks + adds blur on scroll
+- Carousel with snap + drag
+- Smooth-scroll anchor nav
+- Lightbox gallery
+- All transitions ≤400ms, easing `cubic-bezier(.2,.8,.2,1)`
+
+### Technical notes
+- Update `src/index.css` design tokens: dark theme defaults, add `--gold`, `--gold-soft`, `--ink`, `--cream`; add Google Fonts (Playfair Display + Inter) via `index.html`
+- Extend `tailwind.config.ts` with brand colors, custom keyframes (fade-up, ken-burns, marquee), font families
+- Copy uploaded flyer images into `src/assets/` and import as ES6 modules
+- New components in `src/components/`: `TopBar`, `Navbar`, `Hero`, `About`, `Services`, `Offers`, `PriceList`, `Gallery`, `Testimonials`, `CTASection`, `Footer`, `Lightbox`
+- Replace `src/pages/Index.tsx` to compose the sections
+- Mobile-first: hamburger menu (Sheet), stacked hero, swipeable carousel, condensed price list
+- No backend needed; "Book Now" opens `tel:` link + WhatsApp `wa.me/916309480713`
+
+### Out of scope
+- Real booking system / database
+- Auth, CMS, payments
+- Stock imagery beyond the provided flyers
